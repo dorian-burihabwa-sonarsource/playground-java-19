@@ -1,7 +1,11 @@
 package org.sonar.java.nineteen;
 
+import java.util.logging.Logger;
+
 public class Main {
+  private static Logger LOG = Logger.getLogger(Main.class.getName());
+
   public static void main(String[] args) {
-    System.out.println("Hello world!");
+    LOG.info("Hello, world!");
   }
 }
