@@ -2,17 +2,29 @@ package org.sonar.java.nineteen.jep405;
 
 import java.util.Optional;
 
-public record Line(Point a, Point b) {
+public record Line(Point a, Point b) implements GeometricObject {
 
   public Line {
     float m = ((float) a.y() - b.y()) / (a.x() - b.x());
     float c = (-1 * b.x()) * m + b.x();
   }
 
-
-  boolean contains(Point point) {
-    return false;
+  @Override
+  public boolean contains(GeometricObject go) {
+    switch (go) {
+      case Point p -> {
+        var computedY = computeSlope() * p.x() + computeOffset();
+        return Math.abs(computedY - p.y()) < 10e-6;
+      }
+      case Line line -> {
+        return this.equals(line);
+      }
+      default -> {
+        return false;
+      }
+    }
   }
+
 
   Optional<Point> intersection(Line other) {
     return Optional.empty();
@@ -36,7 +48,7 @@ public record Line(Point a, Point b) {
   }
 
   private float computeOffset() {
-    return  (-1.0f * b.y()) + b.y();
+    return (-1.0f * b.y()) + b.y();
   }
 
   @Override
