@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("org.sonarqube") version "3.5.0.2730"
 }
 
 group = "org.sonar.java.nineteen"
@@ -16,4 +17,12 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property ("sonar.projectKey", "dorian-burihabwa-sonarsource_playground-java-19")
+        property ("sonar.organization", "dorian-burihabwa-sonarsource")
+        property ("sonar.host.url", "https://sonarcloud.io")
+    }
 }
