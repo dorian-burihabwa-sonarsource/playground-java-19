@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="bindingEnabled" value="true" />
+    <option name="projectKey" value="dorian-burihabwa-sonarsource_playground-java-19" />
+    <option name="serverId" value="SC (dorian-burihabwa-sonarsource)" />
+  </component>
+</project>

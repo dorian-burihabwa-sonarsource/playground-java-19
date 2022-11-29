@@ -3,7 +3,7 @@ package org.sonar.java.nineteen;
 import java.util.logging.Logger;
 import org.sonar.java.nineteen.jep405.Line;
 import org.sonar.java.nineteen.jep405.Point;
-import org.sonar.java.nineteen.jep405.Rectangle;
+import org.sonar.java.nineteen.jep427.Rectangle;
 
 public class Main {
   private static final Logger LOG = Logger.getLogger(Main.class.getName());

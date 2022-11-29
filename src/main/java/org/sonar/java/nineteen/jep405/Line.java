@@ -4,17 +4,15 @@ import java.util.Optional;
 
 public record Line(Point a, Point b) implements GeometricObject {
 
-  public Line {
-    float m = ((float) a.y() - b.y()) / (a.x() - b.x());
-    float c = (-1 * b.x()) * m + b.x();
-  }
-
   @Override
   public boolean contains(GeometricObject go) {
     switch (go) {
       case Point p -> {
         var computedY = computeSlope() * p.x() + computeOffset();
         return Math.abs(computedY - p.y()) < 10e-6;
+      }
+      case Line line when(line.a.x() == line.b.x() && line.a.y() == line.b.y()) -> {
+        return false;
       }
       case Line line -> {
         return this.equals(line);
