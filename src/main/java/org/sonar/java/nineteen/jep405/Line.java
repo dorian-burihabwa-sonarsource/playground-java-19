@@ -1,6 +1,8 @@
 package org.sonar.java.nineteen.jep405;
 
 import java.util.Optional;
+import org.sonar.java.nineteen.GeometricObject;
+import org.sonar.java.nineteen.Point;
 
 public record Line(Point a, Point b) implements GeometricObject {
 

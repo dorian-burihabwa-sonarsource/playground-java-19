@@ -2,6 +2,7 @@ package org.sonar.java.nineteen.jep405;
 
 
 import org.junit.jupiter.api.Test;
+import org.sonar.java.nineteen.Point;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

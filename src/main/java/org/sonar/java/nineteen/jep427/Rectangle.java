@@ -1,7 +1,7 @@
 package org.sonar.java.nineteen.jep427;
 
-import org.sonar.java.nineteen.jep405.Point;
-import org.sonar.java.nineteen.jep405.Polygon;
+import org.sonar.java.nineteen.Point;
+import org.sonar.java.nineteen.Polygon;
 
 public record Rectangle(Point a, Point b) implements Polygon {
 
